@@ -269,11 +269,11 @@ def main() -> None:
     
     log_progress("Preliminaries complete. Initiating ETL process")
     
-    for matchID in matchIDs[:1]:
+    for matchID in matchIDs:
         mapRounds = get_map_rounds(matchID, api)
-        for mapRound in mapRounds[:1]:
+        for mapRound in mapRounds:
             mapScores = mapRound.scores
-            for mapScore in mapScores[:3]:
+            for mapScore in mapScores:
                 mapScoreMods = get_score_mods(mapScore)
                 mapScoreEntry = get_score_entry(mapScoreMods, mapScore, matchID, api)
                 scoreEntries.append(mapScoreEntry)
